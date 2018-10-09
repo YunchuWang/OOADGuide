@@ -47,6 +47,51 @@ Design principles:
 	<ul> 
 		<li>Design principles help guide the way we create software to attain certain very important software qualities, such as maintainability, and readability.  These principles help code to age gracefully.
 		<li>
+		<li>
+			Single Responsibility Principle indicates that each class should be centered around one cohesive concept
+
+When adding new functionality, consider into which class it would best fit
+
+If, over time, a class seems like it has more than one responsibility, it can be split into two separate classes
+		<li>
+		<li>
+			Chef server should be decoupled
+		<li>
+		<li>
+			Coupling between two classes indicates that two classes collaborate in some way.  
+
+Inter-class coupling can be through method calls, dependencies, or by holding functionality in common that accomplishes a goal without explicitly declaring as such.
+
+The seriousness of kinds of coupling is directly related to the propagation of changes in the system:
+
+Low: a change in one place requires no change in a collaborating class
+
+Medium: a change in one class does require a remote change, but the compiler warns the developer that the change is needed.  An example of this is when a checked exception is declared to be thrown, the compiler will alert the developer that it must be caught at the calling location.  Method signature changes are also checked by the compiler, as are Type changes.
+
+High: a change in one class does require a remote change, but the collaboration will only be detected at runtime -- meaning you have to run the code to see that the change has affected other classes. 
+
+Coupling can also be considered architecturally, where we look at the relationships between classes to see if the overall design is being maintained.
+		<li>
+		<li> important! for a set of objects used in different classes, it will make classes highly coupled. to reduce coupling, define the set of objects into a class and let all classes use and modify to the class therefore eliminating inconsistency.
+		<li>
+		<li>
+		The Liskov Substitution Principle states that for a subclass to be substitutable for its superclass, the subclass cannot break the expectations that a user of the superclass would have.  Thus, it cannot reduce the service it provides, and cannot produce effects not produced in the superclass.
+
+It formally states that 
+
+the preconditions of a subclass’s behaviour (methods) cannot be strengthened, meaning (among other things) that a sub-method cannot accept a narrower range of inputs than the original method.
+
+The post conditions of a sub-method cannot be weakened, meaning that the sub-method cannot have a broader range of effect than the original method.
+		<li>
+		<li>important see how LIV works in https://courses.edx.org/courses/course-v1:UBCx+SoftConst2x+3T2017/courseware/c6ea9f605fb74ff7ad2a1ae7ab435075/eaab8b297c4443169f034390a10e8492/?child=first
+		<li>
+		<li>
+			If class cant have all behaviors of subclass it should not extends it.
+			Two solutions : changed to association || use interface
+		<li>
+		<li>
+			Subclass cant override variables in superclass. If you want to have different values in subclasses, you can implement getMethod!
+		<li>
 	</ul>
 
 # JAVA TIPS
